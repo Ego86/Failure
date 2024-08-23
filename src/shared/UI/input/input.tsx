@@ -1,28 +1,28 @@
-import { TextField, TextFieldVariants } from "@mui/material";
-import { ChangeEventHandler, memo } from "react";
+import { IInputProps } from "@/shared/interface/input";
+import { TextField } from "@mui/material";
+import { memo } from "react";
 
-interface IInputProps {
-  placeholder: string;
-  value: string;
-  onChange: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-  type: "text" | "password" | "email",
-  variant: TextFieldVariants
-}
+
 const Input = memo<IInputProps>((
   { 
     placeholder,
     value, 
     onChange,
     type = "text",
-    variant 
+    variant,
+    label,
+    helperText,
+    color
   }
 ) => {
   return <TextField 
   variant={variant} 
   type={type}  
-  color="primary" 
+  color={color} 
   placeholder={placeholder} 
   value={value} 
+  label={label}
+  helperText={helperText}
   onChange={onChange} />;
 });
 

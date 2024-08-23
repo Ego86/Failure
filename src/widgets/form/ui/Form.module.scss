@@ -1,0 +1,13 @@
+.form {
+    @apply flex flex-col justify-center items-center;
+    
+    :not(:last-child){
+        margin-bottom: 20px;
+    }
+    div{
+     @apply max-w-96 w-96 min-w-32; 
+    }
+    button{
+       @apply max-w-96 w-96 min-w-32;
+    }
+}
