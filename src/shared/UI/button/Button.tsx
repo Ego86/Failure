@@ -1,6 +1,5 @@
 import { IButtonProps } from "@/shared/interface/button";
-import { Button as ButtonUI } from "@mui/material";
-
+import style from "./Button.module.scss"
 
 
 
@@ -9,17 +8,14 @@ const Button = (
     children,
     onClick, 
     className, 
-    variant = "text",
-    color
+
   }: IButtonProps ) => {
   const button: JSX.Element = ( 
-    <ButtonUI 
-    color={color}
-    className={className} 
-    variant={variant} 
+    <button
+    className={`${style.button} ${className}`}  
     onClick={onClick}>
     {children}
-    </ButtonUI>
+    </button>
   );
 
   return button

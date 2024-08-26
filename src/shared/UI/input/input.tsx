@@ -1,7 +1,6 @@
 import { IInputProps } from "@/shared/interface/input";
-import { TextField } from "@mui/material";
 import { memo } from "react";
-
+import style from"./Input.module.scss"
 
 const Input = memo<IInputProps>((
   { 
@@ -9,20 +8,13 @@ const Input = memo<IInputProps>((
     value, 
     onChange,
     type = "text",
-    variant,
-    label,
-    helperText,
-    color
   }
 ) => {
-  return <TextField 
-  variant={variant} 
+  return <input  
+  className={style.input}
   type={type}  
-  color={color} 
   placeholder={placeholder} 
   value={value} 
-  label={label}
-  helperText={helperText}
   onChange={onChange} />;
 });
 

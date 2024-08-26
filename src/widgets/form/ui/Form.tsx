@@ -4,15 +4,14 @@ import style from "./Form.module.scss";
 import { IFormProps } from "../model/interface";
 import Button from "@/shared/UI/button/Button";
 const Form = memo(
-  ({ nameInput, onChange, className, placeholder, value, onSubmit }: IFormProps) => {
+  ({ nameInput, onChange, className, value, onSubmit }: IFormProps) => {
     const inputs = nameInput?.map((name) => {
       return (
         <div key={name}>
           <Input
-            label={name}
             onChange={onChange}
             value={value}
-            placeholder={placeholder}
+            placeholder={name}
           />
         </div>
       );
@@ -20,7 +19,7 @@ const Form = memo(
     return (
       <form className={`${style.form} ${className}`} onSubmit={onSubmit}>
         {inputs}
-        <Button color="inherit" variant="outlined" >Send</Button>
+        <Button>Send</Button>
       </form>
     );
   }
