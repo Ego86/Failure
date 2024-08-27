@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import Form from "@/widgets/form/ui/Form";
 import style from "./page.module.scss";
-import BackgroundLogo from "@/features/backgroundElements/backgroundLogo/backGroundLogo";
+import BackgroundLogo from "@/features/backgroundElements/backgroundLogo/backgroundLogo";
 
 const Auth = () => {
  

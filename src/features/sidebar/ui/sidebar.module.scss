@@ -1,0 +1,20 @@
+.list{ 
+    @apply absolute left-5 top-2/4 bg-[#181818] flex flex-col px-2 py-2 rounded-lg;
+    >button {
+        @apply relative left-3/4;
+    }
+    button.active {
+    @apply static;
+    }
+    ul
+      >li
+        >a{ 
+        @apply flex justify-start items-center;
+        >svg{
+            margin-right: 5px;
+        }
+    }
+    ul>li {
+        @apply py-1;
+    }
+}
