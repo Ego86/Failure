@@ -1,5 +1,5 @@
 import { IButtonProps } from "@/shared/interface/button";
-import style from "./Button.module.scss"
+import style from "./button.module.scss"
 
 
 

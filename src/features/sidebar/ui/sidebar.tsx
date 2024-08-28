@@ -1,9 +1,8 @@
 import { listComponents } from "@/features/constants/navigation/navigation";
-import { PanelRightOpen } from "lucide-react";
+import { PanelLeftOpen, PanelRightOpen } from "lucide-react";
 import style from "./sidebar.module.scss";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "@/shared/UI/button/Button";
 import { m } from "framer-motion";
 
 export const Sidebar = () => {
@@ -14,8 +13,8 @@ export const Sidebar = () => {
         return (
           <li key={index}>
             <Link to={url}>
-              <Icon />
-              {isOpen && name}
+              <Icon className={isOpen ? style.icon : ""} />
+              {isOpen ? name : ""}
             </Link>
           </li>
         );
@@ -26,16 +25,23 @@ export const Sidebar = () => {
   return (
     <m.nav
       layout
-      animate={{ width: isOpen ? "6em" : "48px" }}
-      transition={{type: "just",  stiffness: 100}}
+      animate={{
+        width: isOpen ? "6.2em" : "50px",
+        boxShadow: isOpen
+          ? "inset 2px 3px 6px 1px #181818"
+          : "2px 3px 6px 1px #181818",
+      }}
+      transition={{ type: "just", stiffness: 200 }}
       className={style.list}
     >
-      <Button
+      <m.button
+      animate={{x: isOpen? 1 : 0 }}
+      transition={{type: "just"}}
         className={!isOpen ? style.active : ""}
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <PanelRightOpen />
-      </Button>
+        {isOpen ? <PanelRightOpen /> : <PanelLeftOpen/>}
+      </m.button>
       <ul>{list}</ul>
     </m.nav>
   );
