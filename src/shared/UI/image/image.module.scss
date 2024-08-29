@@ -1,0 +1,9 @@
+.img{
+  @apply bg-no-repeat object-cover max-w-full max-h-full;
+}
+.blur{
+    @apply blur-md cursor-pointer;
+    &:hover{
+        @apply blur-sm;
+    }
+}

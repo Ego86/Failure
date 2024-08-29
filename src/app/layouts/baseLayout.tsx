@@ -1,16 +1,17 @@
 import Header from "@/widgets/header";
-import Router from "../router/root";
+
 import style from "./baseLayout.module.scss"
 import Sidebar from "@/features/sidebar/ui/sidebar";
+import { Outlet } from "react-router-dom";
 
-const App = () => {
+const BaseLayout = () => {
   return(
     <div className={style.wrapper}>
     <Header/>
     <Sidebar/>
-    <Router/>
+    <Outlet/>
     </div>
 )
 };
 
-export default App;
+export default BaseLayout;

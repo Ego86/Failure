@@ -1,7 +1,7 @@
 import {  LucideProps } from "lucide-react";
 
-export interface ILinkComponents {
+export interface IListComponents {
   url: string;
-  name: string;
+  title: string;
   Icon:  React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>> ;
 }

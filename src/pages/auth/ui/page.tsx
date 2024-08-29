@@ -1,14 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import Form from "@/widgets/form/ui/Form";
 import style from "./page.module.scss";
-import BackgroundLogo from "@/features/backgroundElements/backgroundLogo/backgroundLogo";
-
+import MenuItems from "@/features/menuItems/menuItems";
+import { LogIn, MessageCircleQuestion } from "lucide-react";
 const Auth = () => {
- 
+  const menu = [
+    { title: "registred", url: "./registred", Icon: LogIn },
+    { title: "question", url: "./questuion", Icon: MessageCircleQuestion },
+  ];
   return (
     <main className={style.main}>
-      <BackgroundLogo className={style.logo} disable={style.disable}/>
-      <Form nameInput={["email", "password"]} />
+      <section>
+        <h1>Login</h1>
+        <Form nameInput={["email", "password"]} />
+        <MenuItems items={menu} />
+      </section>
     </main>
   );
 };

@@ -1,8 +1,8 @@
 import { LogOut, User, Users } from "lucide-react";
-import { ILinkComponents } from "./interface";
+import { IListComponents} from "./interface";
 
-export const listComponents:ILinkComponents[] = [
-    { url: "/profile", name: "profile", Icon: User },
-    { url: "/frinds", name: "friends", Icon: Users },
-    { url: "/exit", name: "exit", Icon: LogOut },
+export const listComponents:IListComponents[] = [
+    { url: "/profile", title: "profile", Icon: User },
+    { url: "/frinds", title: "friends", Icon: Users },
+    { url: "/exit", title: "exit", Icon: LogOut },
   ]

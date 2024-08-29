@@ -9,12 +9,12 @@ export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const list = useMemo(
     () =>
-      listComponents.map(({ url, name, Icon }, index) => {
+      listComponents.map(({ url, title, Icon }, index) => {
         return (
           <li key={index}>
             <Link to={url}>
               <Icon className={isOpen ? style.icon : ""} />
-              {isOpen ? name : ""}
+              {isOpen ? title : ""}
             </Link>
           </li>
         );

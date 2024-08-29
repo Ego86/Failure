@@ -1,11 +1,12 @@
 import Auth from "@/pages/auth/ui/page";
 import Home from "../../pages/home/ui/page";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import BaseLayout from "../layouts/baseLayout";
 
 const Router = () => {
   return (
       <Routes>
-        <Route element={<><h1>loyaut</h1> <Outlet /></>}>
+        <Route element={<BaseLayout/>}>
           <Route path="/" element={<Home />} />
         </Route>
           <Route path="/auth" element={<Auth />} />
