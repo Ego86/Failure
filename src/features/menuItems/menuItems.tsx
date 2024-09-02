@@ -20,7 +20,7 @@ const MenuItems = memo(({ items }: { items: IListComponents[] }) => {
       <ul className={style.list}>
         {items.map(({ title, url, Icon }) => {
           return (
-            <li>
+            <li key={title}>
               <Link to={url}>
                 <Icon />
                 <p>{title}</p>

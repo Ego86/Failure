@@ -1,23 +1,31 @@
-.nav{
+.nav {
     @apply flex py-1 px-2 mt-4 outline-none bg-[#242424c9] rounded-lg overflow-hidden;
-    button{
+
+    button {
         margin-right: 8px;
-    &:hover{
-        color: #fce3c2;
-    }
-}
-}
-.list {
-    @apply flex;
-    li{
-        &:hover{
+
+        &:hover {
             color: #fce3c2;
         }
+    }
+}
+
+.list {
+    @apply flex;
+
+    >li {
         margin-right: 8px;
-        >a{
-        @apply flex;
-     p{
-        margin-left: 4px;
-     }
-    }}
+
+        &:hover {
+            color: #fce3c2;
+        }
+
+        >a {
+            @apply flex;
+
+            p {
+                margin-left: 4px;
+            }
+        }
+    }
 }

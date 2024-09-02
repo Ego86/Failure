@@ -1,4 +1,4 @@
-import { IInputProps } from "@/shared/interface/input";
+import { IInputProps } from "@/shared/interfaces/input";
 import { memo } from "react";
 import style from"./Input.module.scss"
 

@@ -5,12 +5,14 @@ import { IFormProps } from "../model/interface";
 import Button from "@/shared/UI/button/Button";
 const Form = memo(
   ({ nameInput, onChange, className, value, onSubmit }: IFormProps) => {
-    const inputs = nameInput?.map((name) => {
+    const inputs = nameInput?.map((name, index: number) => {
+      const handleChange = Array.isArray(onChange) ? onChange[index] : onChange;
+      const inputValue = Array.isArray(value) ? value[index] : value;
       return (
         <div key={name}>
           <Input
-            onChange={onChange}
-            value={value}
+            onChange={(event) => handleChange!(event.target.value)}
+            value={inputValue}
             placeholder={name}
           />
         </div>
