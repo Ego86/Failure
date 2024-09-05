@@ -9,8 +9,15 @@ export const loginApi = createApi({
     getLoginApi: builder.query<ILoginForm, string>({
       query: () => "posts",
     }),
+    sendLoginUser: builder.mutation<ILoginForm, string>({
+      query: (body) => ({
+        url: "posts",
+        method: "POST",
+        body
+      })
+    })
   }),
 });
 
 // Экспортируем нужные части API
-export const { useGetLoginApiQuery } = loginApi;
+export const { useGetLoginApiQuery, useSendLoginUserMutation } = loginApi;

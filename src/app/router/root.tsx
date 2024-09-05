@@ -1,16 +1,18 @@
-import { Login } from "@/pages/auth/login/index";
-import Home from "../../pages/home/ui/page";
 import { Route, Routes } from "react-router-dom";
 import BaseLayout from "../layouts/baseLayout";
+import { Home, Login } from "./lazyPages";
+import { Suspense } from "react";
 
 const Router = () => {
   return (
-    <Routes>
-      <Route element={<BaseLayout />}>
-        <Route path="/" element={<Home />} />
-      </Route>
-      <Route path="/auth" element={<Login />} />
-    </Routes>
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <Routes>
+        <Route element={<BaseLayout />}>
+          <Route path="/" element={<Home />} />
+        </Route>
+        <Route path="/auth" element={<Login />} />
+      </Routes>
+    </Suspense>
   );
 };
 
