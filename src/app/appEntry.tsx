@@ -1,11 +1,11 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
-import "./main.scss";
-import { BrowserRouter } from "react-router-dom";
-import { domAnimation, LazyMotion } from "framer-motion";
-import Router from "./router/root";
 import { Provider } from "react-redux";
+import { domAnimation, LazyMotion } from "framer-motion";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./router/root";
 import store from "@/shared/store";
+import "./main.scss";
 
 const root = document.querySelector("#root")!;
 

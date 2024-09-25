@@ -1,6 +1,7 @@
+import Post from "@/entities/post/ui/post"
 import Image from "@/shared/UI/image/image"
 import image from "@/shared/assets/загружено (4).png"
-import Post from "@/widgets/post/ui/post"
+
 const Home = () => {
 return (<>
 <h1 style={{width: "300px", height: "300px"}}>

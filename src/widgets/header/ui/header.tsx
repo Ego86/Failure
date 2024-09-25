@@ -1,11 +1,11 @@
-// import ModalNav from "@/features/modalNavigation";
-import ModalNav from "@/features/modalNavigation/ui/modalNavigation";
-import Logo from "@/shared/UI/logo/logo";
 import { useState } from "react";
-import style from "./index.module.scss" 
 import { LayoutGrid } from "lucide-react";
+
+import Logo from "@/shared/UI/logo/logo";
 import Button from "@/shared/UI/button/Button";
-const Header = () => {
+import ModalNav from "@/shared/UI/modalNavigation";
+import style from "./header.module.scss" 
+export const Header = () => {
   const [isActive, setIsActive] = useState(false);
   return (
     <header className={style.header}>
@@ -18,4 +18,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+

@@ -1,16 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import Form from "@/widgets/form/ui/Form";
-import styles from "./login.module.scss";
-import MenuItems from "@/features/menuItems/menuItems";
-import { LogIn, MessageCircleQuestion } from "lucide-react";
 import { useState } from "react";
 
-const menu = [
-  { title: "registred", url: "./registred", Icon: LogIn },
-  { title: "question", url: "./questuion", Icon: MessageCircleQuestion },
-];
+import Form from "@/widgets/form/ui/Form";
+import styles from "./login.module.scss";
+import MenuItems from "@/shared/UI/menuItems/menuItems";
+import { menu } from "../../constant/constant";
 
-export const Login = () => {
+
+
+ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = async (event: { preventDefault: () => void }) => {
@@ -31,3 +29,4 @@ export const Login = () => {
     </main>
   );
 };
+export default Login
