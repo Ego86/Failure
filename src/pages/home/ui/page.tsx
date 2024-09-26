@@ -4,11 +4,11 @@ import image from "@/shared/assets/загружено (4).png"
 
 const Home = () => {
 return (<>
-<h1 style={{width: "300px", height: "300px"}}>
+<h1 style={{width: "100px", height: "100px"}}>
 hello world!
+</h1>
 <Post/>
 <Image image={image}></Image>
-</h1>
 </>
 )
 }

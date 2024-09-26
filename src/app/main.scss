@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 // bg #181818
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
     background: #1f1f1f;
     color: #fff;
@@ -14,4 +18,8 @@ html {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     outline: none;
+}
+html, body, div#root{
+    height: 100%;
+    overflow-x: hidden;
 }

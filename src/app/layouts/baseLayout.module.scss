@@ -1,3 +1,8 @@
-.wrapper {
-    margin:  auto 150px;
+div.wrapper {
+    height: 100%;
+    margin: 0;     
+    @media (min-width: 500px) {
+        margin: auto 150px;
+    }
+    
 }
