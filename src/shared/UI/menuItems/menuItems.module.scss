@@ -1,5 +1,5 @@
 .nav {
-    @apply flex py-1 px-2 mt-4 outline-none bg-[#242424c9] rounded-lg overflow-hidden;
+    @apply flex w-max py-1 px-2 mt-4 outline-none bg-[#242424c9] rounded-lg overflow-hidden;
 
     button {
         margin-right: 8px;

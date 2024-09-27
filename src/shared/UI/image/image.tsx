@@ -14,6 +14,7 @@ const Image = ({
     <img
       className={`${blur ? style.blur : ""} ${style.img} ${className}`}
       src={image}
+      draggable={false}
       alt={alt}
     />
   );
