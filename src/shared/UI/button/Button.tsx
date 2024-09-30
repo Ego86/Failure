@@ -8,11 +8,11 @@ const Button = (
     children,
     onClick, 
     className, 
-
+    isActive = false
   }: IButtonProps ) => {
   const button: JSX.Element = ( 
     <button
-    className={`${style.button} ${className}`}  
+    className={`${style.button} ${className} ${isActive && style.active}`}  
     onClick={onClick}>
     {children}
     </button>
