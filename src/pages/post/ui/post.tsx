@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { ArrowBigLeft } from 'lucide-react';
+import { useParams, useNavigate, useNavigation } from "react-router-dom";
+import { ArrowBigLeft } from "lucide-react";
+import { MoveDiagonal } from 'lucide-react';
 import img from "@/shared/assets/1625514962_30-kartinkin-com-p-sad-izyashchnikh-slov-anime-anime-krasivo-30.jpg";
 import img2 from "@/shared/assets/1667929102152124336.jpg";
 import img3 from "@/shared/assets/загружено (4).png";
@@ -10,6 +11,7 @@ import Button from "@/shared/UI/button/Button";
 import styles from "./post.module.scss";
 const Post = () => {
   const { id } = useParams();
+  const navigate = useNavigate()
   const [data, setData] = useState({
     username: "Failure",
     postData: {
@@ -18,6 +20,8 @@ const Post = () => {
       images: [img, img2, img3],
     },
   });
+  
+   
   useEffect(() => {
     const fc = (event: { send: (params: string | undefined) => void }) => {
       event.send(id);
@@ -29,7 +33,9 @@ const Post = () => {
   return (
     <main className={styles.main}>
       <article>
-        <Button><ArrowBigLeft/></Button>
+        <Button onClick={() => navigate(-1)}>
+          <ArrowBigLeft />
+        </Button>
         <section className={styles.imgSection}>
           {data.postData.images.length > 1 ? (
             data.postData.images.map((img, index) => (
@@ -38,15 +44,17 @@ const Post = () => {
           ) : (
             <Image image={data.postData.images[0]} />
           )}
+          <Button><MoveDiagonal/></Button>
         </section>
-
-        <section className={styles.userContentSection}>
-          <h2>{data.username}</h2>
-          <Button>suscribe</Button>
-        </section>
-        <section className={styles.mainSection}>
-          <h1>{data.postData.title}</h1>
-          <p>{data.postData.text}</p>
+        <section className={styles.textWrapper}>
+          <section className={styles.userDataSection}>
+            <h2>{data.username}</h2>
+            <Button>suscribe</Button>
+          </section>
+          <section className={styles.mainSection}>
+            <h1>{data.postData.title}</h1>
+            <p>{data.postData.text}</p>
+          </section>
         </section>
       </article>
     </main>

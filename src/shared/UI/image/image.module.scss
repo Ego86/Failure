@@ -1,7 +1,7 @@
 .img{
   max-width: 100%;
-  max-height: 100%;
-  @apply  bg-no-repeat object-cover min-w-20 min-h-20;
+  max-height: auto;
+  @apply  bg-no-repeat object-cover min-w-20 min-h-[auto];
 }
 
 .blur{

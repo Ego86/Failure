@@ -16,7 +16,7 @@ const Post = memo(() => {
   const [width] = useWindowSize();
 
   return (
-    <article className={styles.post}>
+    <article className={styles.post} >
       <section className={styles.text}>
         <h2>{data?.title && data?.title}</h2>
         <p>
