@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/baseLayout";
 import { Home, Login } from "./lazyPages";
 import { Suspense } from "react";
 import Post from "@/pages/post/ui/post";
+import CreatePost from "@/pages/create-post/UI/create-post";
 
 const Router = () => {
   return (
@@ -11,6 +12,7 @@ const Router = () => {
         <Route element={<BaseLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/post/:id" element={<Post/>}/>
+          <Route path="/create-post" element={<CreatePost />}/>
         </Route>
         <Route path="/auth" element={<Login />} />
       </Routes>

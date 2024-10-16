@@ -5,5 +5,5 @@ export interface IInputProps {
   placeholder?: string;
   value?: string | number;
   onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-  type?: "text" | "password" | "email";
+  type?: "text" | "password" | "email" | "file";
 }

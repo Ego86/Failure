@@ -5,6 +5,8 @@ import img2 from "@/shared/assets/1625514962_30-kartinkin-com-p-sad-izyashchnikh
 import img3 from "@/shared/assets/1667929102152124336.jpg";
 import styles from "./post.module.scss";
 import useWindowSize from "@/shared/hook/useWindowSize";
+import { Link } from "react-router-dom";
+import PlatfomArticle from "@/shared/UI/platformArticle/UI/platfomArticle";
 
 const Post = memo(() => {
   const data = {
@@ -14,29 +16,35 @@ const Post = memo(() => {
     img: [img, img2, img3],
   };
   const [width] = useWindowSize();
+  
+  const imgAllRender = (
+    <section className={styles.images}>
+      {data?.img && width > 1000 ? (
+        data.img.map((img) => <Image image={img} />)
+      ) : (
+        <>
+          <Image image={data.img[0]} />
+          <Image blur image={data.img[1]} />
+        </>
+      )}
+    </section>
+  );
 
   return (
-    <article className={styles.post} >
-      <section className={styles.text}>
-        <h2>{data?.title && data?.title}</h2>
-        <p>
-          {data.text.length >= 400
-            ? `${data.text.slice(-data.text.length, 400)} читать полность...`
-            : data.text}
-        </p>
-      </section>
-      <section className={styles.images}>
-        {data?.img && width > 1000 ? (
-          data.img.map((img) => <Image image={img} />)
-        ) : (
-          <>
-            <Image image={data.img[0]} />
-            <Image blur image={data.img[1]} />
-          </>
-        )}
-      </section>
+    <PlatfomArticle className={styles.post}>
+      <Link to="/post/1">
+        <section className={styles.text}>
+          <h2>{data?.title && data?.title}</h2>
+          <p>
+            {data.text.length >= 400
+              ? `${data.text.slice(-data.text.length, 400)} читать полность...`
+              : data.text}
+          </p>
+        </section>
+        {imgAllRender}
+      </Link>
       <h2 className={styles.username}>{data.username}</h2>
-    </article>
+    </PlatfomArticle>
   );
 });
 

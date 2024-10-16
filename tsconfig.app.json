@@ -14,7 +14,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@entites/*": ["./src/entites/*"]
     },
     /* Linting */
     "strict": true,
