@@ -1,19 +1,19 @@
-import { IButtonProps } from "@/shared/interfaces/button";
+import { IButton } from "@/shared/interfaces/button";
 import style from "./button.module.scss"
 
 
 
 const Button = (
   { 
+    isActive = false,
+    className,
     children,
-    onClick, 
-    className, 
-    isActive = false
-  }: IButtonProps ) => {
+    ...props
+  }: IButton) => {
   const button: JSX.Element = ( 
     <button
     className={`${style.button} ${className} ${isActive && style.active}`}  
-    onClick={onClick}>
+    {...props}>
     {children}
     </button>
   );

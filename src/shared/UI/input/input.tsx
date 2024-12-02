@@ -1,21 +1,16 @@
-import { IInputProps } from "@/shared/interfaces/input";
-import { memo } from "react";
+import { IInput } from "@/shared/interfaces/input";
+import React, { memo } from "react";
 import style from"./Input.module.scss"
 
-const Input = memo<IInputProps>((
+const Input = memo<IInput>((
   { 
-    placeholder,
-    value, 
-    onChange,
-    type = "text",
+    className,
+    ...props
   }
 ) => {
-  return <input  
-  className={style.input}
-  type={type}  
-  placeholder={placeholder} 
-  value={value} 
-  onChange={onChange} />;
+  return <input 
+  className={`${className} ${style.input}`}
+  {...props} />;
 });
 
 export default Input;

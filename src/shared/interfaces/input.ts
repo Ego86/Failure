@@ -1,9 +1,5 @@
-import { ChangeEventHandler } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-export interface IInputProps {
-  [key: string]: string | number | ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> | undefined ;
-  placeholder?: string;
-  value?: string | number;
-  onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-  type?: "text" | "password" | "email" | "file";
+export interface IInput extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>{
+    clasName?: string
 }

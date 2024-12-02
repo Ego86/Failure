@@ -10,7 +10,7 @@ const BaseLayout = () => {
   return (
     <div className={style.wrapper}>
       <Header />
-      {width >= 800 && <Sidebar />}
+      {width >= 1000 && <Sidebar />}
       <Outlet />
     </div>
   );

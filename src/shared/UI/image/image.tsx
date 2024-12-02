@@ -1,5 +1,5 @@
 import style from "./image.module.scss";
-const Image = ({
+const ImageComponent = ({
   className,
   blur,
   image,
@@ -20,4 +20,4 @@ const Image = ({
   );
 };
 
-export default Image;
+export default ImageComponent;

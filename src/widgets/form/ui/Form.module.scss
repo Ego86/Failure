@@ -4,10 +4,13 @@
     :not(:last-child){
         margin-bottom: 20px;
     }
-    div{
-     @apply max-w-96 w-96 min-w-32; 
+    >div{
+     @apply max-w-full w-[30rem] min-w-32; 
     }
     button{
-       @apply max-w-96 w-96 min-w-32;
+       @apply max-w-full w-[30rem] min-w-32;
+       @media (max-width: 500px) {
+        margin-bottom: 20px;
+       }
     }
 }

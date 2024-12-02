@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/baseLayout";
 import { Home, Login } from "./lazyPages";
 import { Suspense } from "react";
 import Post from "@/pages/post/ui/post";
-import CreatePost from "@/pages/create-post/UI/create-post";
+import CreatePost from "@/pages/create-post/create-post";
 
 const Router = () => {
   return (

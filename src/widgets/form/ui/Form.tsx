@@ -1,22 +1,13 @@
-import { memo, ReactNode } from "react";
+import { forwardRef, memo} from "react";
 import style from "./Form.module.scss";
+import { TypeForm } from "@/shared/interfaces/form";
 
-const Form = memo(
-  ({
-    className,
-    children,
-    onSubmit,
-  }: {
-    className?: string;
-    children?: ReactNode 
-    onSubmit?: () => void;
-  }) => {
-    return (
-      <form className={`${style.form} ${className}`} onSubmit={onSubmit}>
-        {children}
-      </form>
-    );
-  }
-);
+const Form = memo<TypeForm>(forwardRef<HTMLFormElement, TypeForm>(({ className, children, ...props }, ref) => {
+  return (
+    <form ref={ref} className={`${style.form} ${className}`} {...props}>
+      {children}
+    </form>
+  );
+}));
 
 export default Form;
