@@ -1,41 +1,27 @@
-// import { ImagePlus } from "lucide-react";
-import Input from "@shared/UI/input/input";
-import Form from "@/widgets/form/ui/Form";
+import Input from "@shared/ui/input/input";
+import Form from "@/shared/ui/form/ui/Form";
 import Button from "@shared/UI/button/Button";
-import PlatfomArticle from "@/shared/UI/platformArticle/UI/platfomArticle";
+import PlatfomArticle from "@/shared/ui/platformArticle/UI/platfomArticle";
 import styles from "./create-post.module.scss";
 import InputImg from "./InputImg/InputImg";
-import { LegacyRef, useEffect, useRef, useState } from "react";
+import { useState } from "react";
+// import { useRef, } from "react";
+// import useElementSize from "@/shared/hook/useElementSize";
 
 export const CreatePost = () => {
-  const formElementRef = useRef();
-  const [sizeForm, setSizeForm] = useState<{width: number, height: number}>({width: 0, height: 0})
-  useEffect(()=>{
-      const resizeObserver = new ResizeObserver((entries) => {
-          for(const entry of entries) {
-              const {width, height} = entry.contentRect
-              setSizeForm({width, height})
-              console.log(entries)
-        }
-        if(formElementRef.current){
-            resizeObserver.observe(formElementRef.current)
-        }
-        return () => {
-            if(formElementRef.current){
-                resizeObserver.unobserve(formElementRef.current)
-            }
-        }
-       })
-  }, [sizeForm, formElementRef])
+const [isImg, setIsImg] = useState<boolean>(false)
+
   return (
     <main className={styles.main}>
-      <PlatfomArticle className={`${sizeForm!.height >= 600 ? "flex-wrap": ""} ${styles.wrapper}`}>
-        <Form ref={formElementRef as unknown as LegacyRef<HTMLFormElement>}>
+      <PlatfomArticle
+        className={`${isImg ? styles.wrap : ""} ${styles.wrapper}`}
+      >
+        <Form>
           <Input placeholder="Title" />
           <Input placeholder="Text" />
           <Button>create post</Button>
         </Form>
-        <InputImg />
+        <InputImg setIsImg={setIsImg} />
       </PlatfomArticle>
     </main>
   );
