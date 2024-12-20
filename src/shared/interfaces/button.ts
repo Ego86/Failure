@@ -5,5 +5,6 @@
 // export type TypeVariant = ButtonOwnProps["variant"]
 
 export interface IButton extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  isActive?: boolean
+  isActive?: boolean,
+  status?: string;
 }

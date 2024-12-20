@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, useNavigation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ArrowBigLeft } from "lucide-react";
 import { MoveDiagonal } from 'lucide-react';
 import img from "@/shared/assets/1625514962_30-kartinkin-com-p-sad-izyashchnikh-slov-anime-anime-krasivo-30.jpg";
 import img2 from "@/shared/assets/1667929102152124336.jpg";
 import img3 from "@/shared/assets/загружено (4).png";
-import Image from "@/shared/UI/image/image";
-import Button from "@/shared/UI/button/Button";
+import Image from "@/shared/ui/image/image";
+import Button from "@/shared/ui/button/Button";
 import styles from "./post.module.scss";
 const Post = () => {
   const { id } = useParams();

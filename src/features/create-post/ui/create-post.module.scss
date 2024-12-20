@@ -1,18 +1,15 @@
 .main {
-    @apply  flex justify-center items-center h-screen;
+    @apply  flex justify-center ;
 
-    >.wrapper.wrap{
-     flex-wrap: wrap;   
-    }
     >.wrapper {
-        @apply flex max-w-[70%]  w-max p-5 ;
-        >form{
-           @apply w-full;
-           
-        }
-        @media (max-width: 500px )  {
-           @apply flex-wrap  justify-center;
-        }
-       
+        @apply  max-w-full max-h-56  w-[50%] p-5 ;
+        
+        
+    }
+}
+.mainMobile{
+    @apply flex flex-col  items-center;
+    .wrapper{
+        @apply  max-w-full max-h-56  w-full p-5 ;
     }
 }

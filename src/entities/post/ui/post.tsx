@@ -16,7 +16,6 @@ const Post = memo(() => {
     img: [img, img2, img3],
   };
   const [width] = useWindowSize();
-  
   const imgAllRender = (
     <section className={styles.images}>
       {data?.img && width > 1000 ? (

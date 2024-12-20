@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import { CreatedPostUI } from "@/features/create-post";
+import Meta from "./meta";
 const CreatePost = () => {
-  
   return (
-   <CreatedPostUI/>
+    <>
+      <Meta />
+      <CreatedPostUI />
+    </>
   );
 };
 

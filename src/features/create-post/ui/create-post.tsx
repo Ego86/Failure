@@ -1,27 +1,47 @@
+import { useState } from "react";
+
+import { Link } from "react-router-dom";
 import Input from "@shared/ui/input/input";
 import Form from "@/shared/ui/form/ui/Form";
-import Button from "@shared/UI/button/Button";
+import Button from "@shared/ui/button/Button";
 import PlatfomArticle from "@/shared/ui/platformArticle/UI/platfomArticle";
-import styles from "./create-post.module.scss";
 import InputImg from "./InputImg/InputImg";
-import { useState } from "react";
-// import { useRef, } from "react";
-// import useElementSize from "@/shared/hook/useElementSize";
+import styles from "./create-post.module.scss";
+import useWindowSize from "@/shared/hook/useWindowSize";
+import createPostModel from "../model/createPost.model";
 
 export const CreatePost = () => {
-const [isImg, setIsImg] = useState<boolean>(false)
+  const [imgs, setImgs] = useState<File[]>([]);
+  const [width] = useWindowSize();
 
+  const sendPostAction = async (formData: FormData) => {
+    const title = formData.get("title") as string;
+    const text = formData.get("text") as string;
+    try {
+      const formDataImgs = new FormData();
+
+      imgs.forEach((item, index) => {
+        formDataImgs.append(`file${index}`, item);
+      });
+      console.log(text, title);
+      const img = await createPostModel.postImgs(formData);
+      const data = await createPostModel.post({ title, text });
+      console.log(data, img);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
-    <main className={styles.main}>
-      <PlatfomArticle
-        className={`${isImg ? styles.wrap : ""} ${styles.wrapper}`}
-      >
-        <Form>
-          <Input placeholder="Title" />
-          <Input placeholder="Text" />
-          <Button>create post</Button>
+    <main className={width > 1000 ? styles.main : styles.mainMobile}>
+      <InputImg setImgs={setImgs} />
+      <PlatfomArticle className={styles.wrapper}>
+        <Form action={sendPostAction}>
+          <Input name="title" placeholder="Title" />
+          <Input name="text" placeholder="Text" />
+          <Button status="Created...">
+            <Link to="/">Сreate post</Link>
+          </Button>
         </Form>
-        <InputImg setIsImg={setIsImg} />
       </PlatfomArticle>
     </main>
   );
