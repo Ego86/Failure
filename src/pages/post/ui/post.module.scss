@@ -12,6 +12,9 @@
                 @apply absolute bottom-3 right-3;
             }
         }
+        .backButton{
+            width: 100%;
+        }
         >.textWrapper {
             @apply p-4;
             .userDataSection {

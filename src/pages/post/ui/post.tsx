@@ -33,7 +33,7 @@ const Post = () => {
   return (
     <main className={styles.main}>
       <article>
-        <Button onClick={() => navigate(-1)}>
+        <Button className={styles.backButton} onClick={() => navigate(-1)}>
           <ArrowBigLeft />
         </Button>
         <section className={styles.imgSection}>

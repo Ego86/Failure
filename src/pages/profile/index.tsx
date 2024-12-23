@@ -1,12 +1,16 @@
-import ImageComponent from "@/shared/ui/image/image";
-import image from "@shared/assets/1625514962_30-kartinkin-com-p-sad-izyashchnikh-slov-anime-anime-krasivo-30.jpg";
-import styles from "./index.module.scss"
+import Post from "@/entities/post/ui/post";
+import ProfileHeaderSection from "@/widgets/profileHeaderSection/ui/profileHeaderSection";
+
+
 const Profile = () => {
   return (
-    <main className={styles.main}>
-      <header >
-        <ImageComponent image={image}/>
-      </header>
+    <main>
+      <ProfileHeaderSection/>
+      <div className="flex flex-wrap">
+        <Post />
+        <Post/>
+        <Post/>
+      </div>
     </main>
   );
 };
