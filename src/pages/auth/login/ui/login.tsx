@@ -1,30 +1,34 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import { useState } from "react";
-
-import Form from "@/widgets/form/ui/Form";
+import Form from "@/shared/ui/form/ui/Form";
 import styles from "./login.module.scss";
-import MenuItems from "@/shared/UI/menuItems/menuItems";
+import MenuItems from "@/shared/ui/menuItems/menuItems";
 import { menu } from "../../constant/constant";
+import Input from "@/shared/ui/input/input";
+import Button from "@/shared/ui/button/Button";
 
 
 
  const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const handleSubmit = async (event: { preventDefault: () => void }) => {
-    event.preventDefault();
+  const handleSubmit = (formData: FormData) => {
+   const email = formData.get("email")
+   console.log(email)
+  //  const password = formData.get("Password")
+  //  use({email, password})
   };
   return (
     <main className={styles.main}>
       <section>
         <h1>Login</h1>
         <Form
-          value={[email, password]}
-          onSubmit={handleSubmit}
-          onChange={[setEmail, setPassword]}
-          nameInput={["email", "password"]}
-        />
-        <MenuItems items={menu} />
+          action={handleSubmit}
+        >
+          <Input name="email" placeholder="Email"/>
+          <Input name="password" placeholder="Password"/>
+          <Button>Auth</Button>
+        </Form>
+        <MenuItems items={menu} sizeEm={15} />
       </section>
     </main>
   );

@@ -13,8 +13,9 @@ export default defineConfig({
     }
   },
   css: {
+    postcss: "./postcss.config.js", 
     modules: {
-      generateScopedName: "[name]__[local]___[hash:base 64:5]"
+      // generateScopedName: "[name]__[local]___[hash:base 64:5]"
       
     },
   },

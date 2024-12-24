@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import {  useState } from "react";
+import {  useNavigate } from "react-router-dom";
 import { ArrowBigLeft } from "lucide-react";
 import { MoveDiagonal } from 'lucide-react';
 import img from "@/shared/assets/1625514962_30-kartinkin-com-p-sad-izyashchnikh-slov-anime-anime-krasivo-30.jpg";
 import img2 from "@/shared/assets/1667929102152124336.jpg";
 import img3 from "@/shared/assets/загружено (4).png";
-import Image from "@/shared/ui/image/image";
+import Image from "@/shared/ui/image/image.tsx";
 import Button from "@/shared/ui/button/Button";
 import styles from "./post.module.scss";
 const Post = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const navigate = useNavigate()
-  const [data, setData] = useState({
+  const [data, _setData] = useState({
     username: "Failure",
     postData: {
       title: "Fail",
@@ -22,13 +22,6 @@ const Post = () => {
   });
   
    
-  useEffect(() => {
-    const fc = (event: { send: (params: string | undefined) => void }) => {
-      event.send(id);
-    };
-
-    return;
-  });
 
   return (
     <main className={styles.main}>

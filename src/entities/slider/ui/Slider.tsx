@@ -1,6 +1,6 @@
-import Image from "@/shared/UI/image/image";
+import Image from "@/shared/ui/image/image.tsx";
 import style from "./Slider.module.scss";
-import Button from "@/shared/UI/button/Button";
+import Button from "@/shared/ui/button/Button.tsx";
 
 export const Slider = (imgs = []) => {
   const images = imgs.map(({ img }) => {

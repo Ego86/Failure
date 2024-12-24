@@ -1,12 +1,12 @@
-import ImageComponent from "@/shared/ui/image/image";
+import ImageComponent from "@/shared/ui/image/image.tsx";
 import image from "@shared/assets/1625514962_30-kartinkin-com-p-sad-izyashchnikh-slov-anime-anime-krasivo-30.jpg";
 import style from "./profileHeaderSection.module.scss";
-import PlatfomArticle from "@/shared/ui/platformArticle/UI/platfomArticle";
 import Button from "@/shared/ui/button/Button";
 import { Settings } from "lucide-react";
+import PlatfomSection from "@/shared/ui/platformSection/UI/platfomSection";
 const ProfileHeaderSection = () => {
   return (
-    <PlatfomArticle className={style.wrapper}>
+    <PlatfomSection className={style.wrapper}>
       <ImageComponent image={image} />
         <div>
           <h2>name</h2>
@@ -18,7 +18,7 @@ const ProfileHeaderSection = () => {
           </h5>
         </div>
         <Button><Settings/></Button>
-    </PlatfomArticle>
+    </PlatfomSection>
   );
 };
 

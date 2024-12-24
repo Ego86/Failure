@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ImagePlus } from "lucide-react";
 import Input from "@/shared/ui/input/input";
-import ImageComponent from "@/shared/ui/image/image";
+import ImageComponent from "@/shared/ui/image/image.tsx";
 import styles from "./inputImg.module.scss";
 
 const InputImg = ({

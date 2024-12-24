@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { m } from "framer-motion";
 import { CircleHelp, LucideProps } from "lucide-react";
 import style from "./menuItems.module.scss"
-import { IListComponents } from "../constants/navigation/interface";
+import { IListComponents } from "../constants/navigation/interface.ts";
 type TypeOpenIcon = React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>
-const MenuItems = memo(({ items, OpenIcon, sizeEm = 15 }: { items: IListComponents[],  OpenIcon: TypeOpenIcon, sizeEm: number}) => {
+const MenuItems = memo(({ items, OpenIcon, sizeEm = 15 }: { items?: IListComponents[],  OpenIcon?: TypeOpenIcon, sizeEm?: number}) => {
   const [isOpen, setIsOpen] = useState(false)
     return (
     <m.nav className={style.nav}
@@ -19,7 +19,7 @@ const MenuItems = memo(({ items, OpenIcon, sizeEm = 15 }: { items: IListComponen
     >
      <m.button onClick={()=> setIsOpen(prev => !prev)}>{OpenIcon ? <OpenIcon/> : <CircleHelp/>}</m.button>
       <ul className={style.list}>
-        {items.map(({ title, url, Icon }) => {
+        {items?.map(({ title, url, Icon }) => {
           return (
             <li key={title}>
               <Link to={url}>

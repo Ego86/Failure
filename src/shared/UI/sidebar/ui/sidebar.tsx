@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { m } from "framer-motion";
 import { PanelLeftOpen, PanelRightOpen } from "lucide-react";
-import { listComponents } from "../../constants/navigation/navigation";
 import style from "./sidebar.module.scss";
+import { listComponents } from "../../constants/navigation/navigation";
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
