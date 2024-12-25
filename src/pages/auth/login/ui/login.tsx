@@ -1,12 +1,11 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
+ 
+ 
+ 
 import Form from "@/shared/ui/form/ui/Form";
 import styles from "./login.module.scss";
-import MenuItems from "@/shared/ui/menuItems/menuItems";
-import { menu } from "../../constant/constant";
 import Input from "@/shared/ui/input/input";
 import Button from "@/shared/ui/button/Button";
+import TabBarMobile from "@/shared/ui/tabBarMobile/tabBarMobile";
 
 
 
@@ -28,7 +27,7 @@ import Button from "@/shared/ui/button/Button";
           <Input name="password" placeholder="Password"/>
           <Button>Auth</Button>
         </Form>
-        <MenuItems items={menu} sizeEm={15} />
+        <TabBarMobile/>
       </section>
     </main>
   );

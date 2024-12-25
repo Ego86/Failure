@@ -3,6 +3,7 @@ import { Header } from "@/widgets/header/index";
 import useWindowSize from "@/shared/hook/useWindowSize";
 import Sidebar from "@/shared/ui/sidebar/ui/sidebar";
 import style from "./baseLayout.module.scss";
+import TabBarMobile from "@/shared/ui/tabBarMobile/tabBarMobile";
 
 const BaseLayout = () => {
   const [width] = useWindowSize();
@@ -10,7 +11,7 @@ const BaseLayout = () => {
   return (
     <div className={style.wrapper}>
       <Header />
-      {width >= 1000 && <Sidebar />}
+      {width >= 1000 ? <Sidebar />: <TabBarMobile/>}
       <Outlet />
     </div>
   );
