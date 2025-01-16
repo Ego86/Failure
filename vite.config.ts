@@ -12,13 +12,7 @@ export default defineConfig({
       "@entites": path.resolve(__dirname, "./src/entities"),
     }
   },
-  css: {
-    postcss: "./postcss.config.js", 
-    modules: {
-      // generateScopedName: "[name]__[local]___[hash:base 64:5]"
-      
-    },
-  },
+
   server: {
     port: 5000
   }

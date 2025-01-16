@@ -6,8 +6,8 @@ const PlatfomSection = ({
   children,
   ...props
 }: {
-  className: string;
-  children: ReactNode;
+  className?: string;
+  children?: ReactNode;
 } & TypeSection) => {
   return (
     <section {...props} className={`${styles.section} ${className}`}>{children}</section>

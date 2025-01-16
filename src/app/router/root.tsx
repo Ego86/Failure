@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import BaseLayout from "../layouts/baseLayout";
-import { Home, Login } from "./lazyPages";
+
+import { BaseLayout, Home, Login } from "./lazyPages";
 import { Suspense } from "react";
 import Post from "@/pages/post/ui/post";
 import CreatePost from "@/pages/create-post/create-post";
@@ -15,13 +15,13 @@ const Router = () => {
       }
     >
       <Routes>
-        <Route element={<BaseLayout />}>
-          <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Login />} />
+        <Route path="/" element={<BaseLayout />}>
+          <Route index element={<Home />} />
           <Route path="/post/:id" element={<Post />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="profile/:id" element={<Profile />} />
         </Route>
-        <Route path="/auth" element={<Login />} />
       </Routes>
     </Suspense>
   );

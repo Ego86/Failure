@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const PlatfomSection = lazy(
   () => import("@/shared/ui/platformSection/UI/platfomSection")
 );
-const Post = memo(() => {
+const Post = memo(({...props}) => {
   const data = {
     username: "Failure",
     title: "Home",
@@ -33,7 +33,7 @@ const Post = memo(() => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <PlatfomSection className={styles.post}>
+      <PlatfomSection {...props} className={styles.post}>
         <Link to="/post/1">
           <section className={styles.text}>
             <h2>{data?.title && data?.title}</h2>

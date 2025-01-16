@@ -7,7 +7,7 @@ const TabBarMobile = () => {
       <ul>
         {listComponents.map(({ title, Icon, url }) => {
           return (
-            <li>
+            <li key={title}>
               <Link to={url}>
                 <Icon />
                 {title}

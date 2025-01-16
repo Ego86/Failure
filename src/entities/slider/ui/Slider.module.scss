@@ -1,4 +1,33 @@
-.slider{
-    @apply flex justify-between items-center overflow-hidden bg-[#1f1f1fd8] absolute w-screen h-screen;
+body {
+    overflow: hidden
+}
 
+.slider {
+    @apply px-8 py-8 z-20 top-0 h-full flex justify-between items-center overflow-hidden bg-[#1f1f1fd8] absolute w-screen;
+    
+    button {
+        @apply h-24;
+    }
+    
+    img {
+        @apply max-w-[900px] hidden h-full;
+    }
+    .active:target {
+        @apply hidden;
+    }
+    .active{
+        @apply block;
+    }
+}
+.countImg{
+    @apply absolute flex top-10  left-2/4 w-max bg-[#1f1f1fd8] px-3 py-3;
+ li{
+    @apply w-2 h-2 bg-black;
+ }
+ li:not(:last-child){
+    margin-right: 10px;
+ }
+}
+.closeBtn{
+    @apply absolute top-[2rem];
 }

@@ -1,12 +1,8 @@
- 
- 
- 
 import Form from "@/shared/ui/form/ui/Form";
 import styles from "./login.module.scss";
 import Input from "@/shared/ui/input/input";
 import Button from "@/shared/ui/button/Button";
-import TabBarMobile from "@/shared/ui/tabBarMobile/tabBarMobile";
-
+import PlatfomSection from "@/shared/ui/platformSection/UI/platfomSection";
 
 
  const Login = () => {
@@ -18,7 +14,7 @@ import TabBarMobile from "@/shared/ui/tabBarMobile/tabBarMobile";
   };
   return (
     <main className={styles.main}>
-      <section>
+      <PlatfomSection>
         <h1>Login</h1>
         <Form
           action={handleSubmit}
@@ -27,8 +23,7 @@ import TabBarMobile from "@/shared/ui/tabBarMobile/tabBarMobile";
           <Input name="password" placeholder="Password"/>
           <Button>Auth</Button>
         </Form>
-        <TabBarMobile/>
-      </section>
+      </PlatfomSection>
     </main>
   );
 };

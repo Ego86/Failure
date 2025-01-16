@@ -11,8 +11,8 @@ const BaseLayout = () => {
   return (
     <div className={style.wrapper}>
       <Header />
-      {width >= 1000 ? <Sidebar />: <TabBarMobile/>}
       <Outlet />
+      {width > 1000 ? <Sidebar /> : <TabBarMobile/>}
     </div>
   );
 };
